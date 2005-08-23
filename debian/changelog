@@ -1,0 +1,50 @@
+mkpersistenthome-kanotix (0.5.7) unstable; urgency=low
+
+  * overhaul packaging.
+  * fix lintian errors.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 23 Aug 2005 17:15:35 +0200
+
+mkpersistenthome-kanotix (0.5-6) unstable; urgency=low
+
+  * add icons. 
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 17 Dec 2004 19:02:35 +0100
+
+mkpersistenthome-kanotix (0.5-5) unstable; urgency=low
+
+  * Forked for Kanotix XDG compatibilty.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 15 Dec 2004 20:26:45 +0100
+
+mkpersistenthome-knoppix (0.5-5) unstable; urgency=low
+
+  * Show gauge while creating empty image
+
+ -- Klaus Knopper <knopper@knopper.net>  Sat, 28 Feb 2004 04:48:59 +0100
+
+mkpersistenthome-knoppix (0.5-4) unstable; urgency=low
+
+  * Added small patch from Fabian Franz for non-suitable partitions error
+    message
+
+ -- Klaus Knopper <knopper@knopper.net>  Mon, 14 Apr 2003 21:37:17 +0200
+
+mkpersistenthome-knoppix (0.5-3) unstable; urgency=low
+
+  * Create image with random data rather than zeros (for security/encryption)
+  * Fixed a counter bug in findfreeloop
+
+ -- Klaus Knopper <knopper@knopper.net>  Wed,  2 Apr 2003 18:14:45 +0200
+
+mkpersistenthome-knoppix (0.5-2) unstable; urgency=low
+
+  * Changed default to "no" when asking to format entire partition
+
+ -- Klaus Knopper <knopper@knopper.net>  Fri, 28 Mar 2003 01:40:10 +0100
+
+mkpersistenthome-knoppix (0.5-1) unstable; urgency=low
+
+  * Initial release
+
+ -- Klaus Knopper <knopper@knopper.net>  Sun, 23 Feb 2003 22:56:17 +0100

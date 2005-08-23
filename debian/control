@@ -1,0 +1,15 @@
+Source: mkpersistenthome-kanotix
+Section: admin
+Priority: optional
+Maintainer: Stefan Lippers-Hollmann <s.l-h@gmx.de>
+Build-Depends-Indep: cdbs (>= 0.4.23-1.1), build-essential, debhelper (>= 4.1.0)
+Standards-Version: 3.6.2
+
+Package: mkpersistenthome-kanotix
+Architecture: all
+Depends: dialog
+Recommends: xdialog
+Provides: mkpersistenthome-knoppix
+Replaces: mkpersistenthome-knoppix
+Description: Shell GUI for generation of a KANOTIX persistent homedir
+ small tool to create a persistent home.

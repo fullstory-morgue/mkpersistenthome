@@ -1,0 +1,3 @@
+mkpersistenthome usr/sbin/
+*.desktop usr/share/applnk/Kanotix/Config/
+icons usr/share/
