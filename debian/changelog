@@ -1,3 +1,9 @@
+mkpersistenthome-kanotix (0.5.9) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri,  4 Nov 2005 19:02:51 +0100
+
 mkpersistenthome-kanotix (0.5.8) unstable; urgency=low
 
   * switch from /mnt/ to /media/.
