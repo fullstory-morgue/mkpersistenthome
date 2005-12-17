@@ -1,8 +1,10 @@
-mkpersistenthome-kanotix (0.5.9) UNRELEASED; urgency=low
+mkpersistenthome-kanotix (0.5.9) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * remove cdbs auto-update feature.
+  * remove virtual knoppix packages.
+  * bump compat level to 5.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri,  4 Nov 2005 19:02:51 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sat, 17 Dec 2005 02:57:36 +0100
 
 mkpersistenthome-kanotix (0.5.8) unstable; urgency=low
 
