@@ -1,5 +1,5 @@
 #!/bin/bash
-# mkpersistenthome - create KNOPPIX home directory image
+# mkpersistenthome - create KANOTIX home directory image
 # (C) Klaus Knopper Feb 2003
 
 PATH="/bin:/sbin:/usr/bin:/usr/sbin"
@@ -40,9 +40,9 @@ HOMEKB="$(du -sk $HOME 2>/dev/null | awk '{print $1}')"
 case "$LANGUAGE" in
 de*|at*|ch*)
 TITLE1="Permanentes KANOTIX Heimverzeichnis anlegen"
-MESSAGE1="Dieses Skript richtet ein permanentes Heimverzeichnis für den User \"knoppix\" auf Ihrer Festplatte oder einem Wechselmedium wie Memorystick, Compactflash oder ZIP-Medium ein. Hierdurch ist es möglich, Daten und persönliche Konfigurationen über einen Reboot hinaus zu speichern, sofern sie im persönlichen Heimverzeichnis des Benutzers abgelegt werden. Per Bootoption, z.B. \"home=/dev/sda1\" für die erste Partition einer SCSI-Festplatte oder eines USB-Memorystick, können Sie beim Systemstart das permanente Heimverzeichnis wieder aktivieren. Die Bootoption \"home=scan\" durchsucht automatisch alle Partitionen und erkannten Speichermedien nach einem persistenten KANOTIX-Heimverzeichnis.
+MESSAGE1="Dieses Skript richtet ein permanentes Heimverzeichnis für den User \"$FLL_LIVE_USER\" auf Ihrer Festplatte oder einem Wechselmedium wie Memorystick, Compactflash oder ZIP-Medium ein. Hierdurch ist es möglich, Daten und persönliche Konfigurationen über einen Reboot hinaus zu speichern, sofern sie im persönlichen Heimverzeichnis des Benutzers abgelegt werden. Per Bootoption, z.B. \"home=/dev/sda1\" für die erste Partition einer SCSI-Festplatte oder eines USB-Memorystick, können Sie beim Systemstart das permanente Heimverzeichnis wieder aktivieren. Die Bootoption \"home=scan\" durchsucht automatisch alle Partitionen und erkannten Speichermedien nach einem persistenten KANOTIX-Heimverzeichnis.
 
-Möchten Sie das Heimverzeichnis des Benutzers \"knoppix\" permanent speichern?"
+Möchten Sie das Heimverzeichnis des Benutzers \"$FLL_LIVE_USER\" permanent speichern?"
 MESSAGE2="Bitte wählen Sie die Partition, auf der Sie das Heimverzeichnis (oder ein Image davon) anlegen möchten."
 MESSAGE3="Möchten Sie die KOMPLETTE Partition verwenden und mit den Linux-Dateisystem formatieren?
 NEIN=Image-Datei auf bestehendem Dateisystem anlegen."
@@ -53,15 +53,15 @@ E4="Weitere systemweite Einstellungen (Drucker etc.)"
 E5="Alle Desktop-Dateien (${DESKTOPKB}kB)"
 SUCCESS="FERTIG!
 
-Die KANOTIX-Konfiguration wurde erfolgreich gespeichert. Ihre Konfigurationsdateien werden beim nächsten KANOTIX-Bootvorgang in die Ramdisk restauriert, wenn Sie im Bootscreen \"knoppix floppyconfig\" (Diskette) bzw. \"knoppix myconfig=/media/verzeichnisname\" angeben."
+Die KANOTIX-Konfiguration wurde erfolgreich gespeichert. Ihre Konfigurationsdateien werden beim nächsten KANOTIX-Bootvorgang in die Ramdisk restauriert, wenn Sie im Bootscreen \"$FLL_LIVE_USER floppyconfig\" (Diskette) bzw. \"$FLL_LIVE_USER myconfig=/media/verzeichnisname\" angeben."
 ERROR="Leider konnte die KANOTIX-Konfiguration NICHT gespeichert werden:"
 MESSAGE_NO_PARTS="Keine passende Partition gefunden. Zur Erinnerung: NTFS-Partitonen können mit Linux nicht beschrieben werden."
 ;;
 *)
 TITLE1="Create persistent KANOTIX home directory"
-MESSAGE1="This script creates a persistent home directory for the \"knoppix\" account on your harddisk or on a changeable medium like memory stick, compact flash or zip media. Using this features makes it possible to store personal data and config files permanently over a reboot, if they are stored inside the home directory of the \"knoppix\" user. The boot option \"home=/dev/sda1\", for the first partition of a SCSI harddisk or USB memory stick as example, activates the persistent home directory at system startup. You can also let KANOTIX scan all autodetected storage devices using the boot option \"home=scan\".
+MESSAGE1="This script creates a persistent home directory for the \"$FLL_LIVE_USER\" account on your harddisk or on a changeable medium like memory stick, compact flash or zip media. Using this features makes it possible to store personal data and config files permanently over a reboot, if they are stored inside the home directory of the \"$FLL_LIVE_USER\" user. The boot option \"home=/dev/sda1\", for the first partition of a SCSI harddisk or USB memory stick as example, activates the persistent home directory at system startup. You can also let KANOTIX scan all autodetected storage devices using the boot option \"home=scan\".
 
-Do you want to create a persistent home directory for the \"knoppix\" user?"
+Do you want to create a persistent home directory for the \"$FLL_LIVE_USER\" user?"
 
 MESSAGE2="Please select partition for creating persistent homedir (or image):"
 MESSAGE3="Do you want to use the ENTIRE Partition, and would like to format it with the Linux filesystem?
@@ -73,7 +73,7 @@ E4="Other system configuration (printer etc.)"
 E5="All files on the Desktop (${DESKTOPKB}kB)"
 SUCCESS="SUCCESS!
 
-Creation of KANOTIX configuration floppy was successful. Your configuration files will be reinstalled to the ramdisk on next KANOTIX boot if you specify \"knoppix floppyconf\" (floppy disk), or \"knoppix myconfig=/media/directoryname\" at the boot prompt."
+Creation of KANOTIX configuration floppy was successful. Your configuration files will be reinstalled to the ramdisk on next KANOTIX boot if you specify \"$FLL_LIVE_USER floppyconf\" (floppy disk), or \"$FLL_LIVE_USER myconfig=/media/directoryname\" at the boot prompt."
 ERROR="The KANOTIX configuration could NOT be saved:"
 MESSAGE_NO_PARTS="No suitable partitions could be found. Remember that NTFS-Partitions are not writable with linux."
 ;;
@@ -102,7 +102,7 @@ DEVICE=""
 if $DIALOG --cr-wrap --clear --title "$TITLE1" --defaultno --yesno "$MESSAGE3" 15 75; then
 DEVICE="$PARTITION"
 else
-DEVICE="$DIRECTORY/knoppix.img"
+DEVICE="$DIRECTORY/$FLL_PERSISTENT_HOME"
 mount | grep -q "$DIRECTORY" || mount -r "$DIRECTORY" 2>"$TMP.err"
 [ "$?" != "0" ] && { $DIALOG --cr-wrap --title "$TITLE1" --msgbox "$ERROR `cat $TMP.err`" 10 75; bailout; }
 mount | grep -q "$DIRECTORY.*ntfs" && { $DIALOG --cr-wrap --title "$TITLE1" --msgbox "$ERROR NTFS" 10 75; bailout; }
@@ -120,7 +120,7 @@ MESSAGE7="Formatiere $DEVICE mit dem ext2 Dateisystem und kopiere Daten..."
 MESSAGE8="Lege Datenbereich für Linux an..."
 SUCCESS="$DEVICE wurde erfolgreich mit dem Linux ext2 Dateisystem formatiert, und Ihre Heimverzeichnis-Daten wurden darauf transferiert.
 
-Sie können jetzt Ihren Computer neu starten, und beim KANOTIX boot:-Prompt durch Eingabe von \"knoppix home=$PARTITION\" oder \"knoppix home=scan\" Ihr permanentes Heimverzeichnis aktivieren. Falls Sie außerdem (mit dem saveconfig Skript) die Systemeinstellungen gesichert haben, können Sie diese Option mit der Angabe von \"myconf=$PARTITION\" oder \"myconf=scan\" kombinieren."
+Sie können jetzt Ihren Computer neu starten, und beim KANOTIX boot:-Prompt durch Eingabe von \"$FLL_LIVE_USER home=$PARTITION\" oder \"$FLL_LIVE_USER home=scan\" Ihr permanentes Heimverzeichnis aktivieren. Falls Sie außerdem (mit dem saveconfig Skript) die Systemeinstellungen gesichert haben, können Sie diese Option mit der Angabe von \"myconf=$PARTITION\" oder \"myconf=scan\" kombinieren."
 ;;
 *)
 MESSAGE4="Are you positively SURE that you want to format partition $PARTITION? ALL DATA WILL BE LOST!"
@@ -130,7 +130,7 @@ MESSAGE7="Formatting $DEVICE with ext2 filesystem and copying data..."
 MESSAGE8="Preparing for Linux filesystem..."
 SUCCESS="$DEVICE has been succeessfully formatted with the Linux ext2 filesystem, and your home directory has been transferred to it.
 
-You may now reboot your computer and type \"knoppix home=$PARTITION\" or \"knoppix home=scan\" at the KANOTIX boot: prompt to take advantage of your new persistent home directory. If you have also saved the system configuration (using the saveconfig script), you can use this in combination with \"myconf=$PARTITION\" or \"myconf=scan\"."
+You may now reboot your computer and type \"$FLL_LIVE_USER home=$PARTITION\" or \"$FLL_LIVE_USER home=scan\" at the KANOTIX boot: prompt to take advantage of your new persistent home directory. If you have also saved the system configuration (using the saveconfig script), you can use this in combination with \"myconf=$PARTITION\" or \"myconf=scan\"."
 ;;
 esac
 
