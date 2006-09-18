@@ -1,3 +1,9 @@
+mkpersistenthome-kanotix (0.5.13) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 18 Sep 2006 02:48:36 +0200
+
 mkpersistenthome-kanotix (0.5.12) unstable; urgency=low
 
   * run rebuildfstab for usb devices.
