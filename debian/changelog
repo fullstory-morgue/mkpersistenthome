@@ -1,3 +1,9 @@
+mkpersistenthome-kanotix (0.5.14) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu,  2 Nov 2006 13:46:06 +0100
+
 mkpersistenthome-kanotix (0.5.13) unstable; urgency=low
 
   * switch to utf-8.
