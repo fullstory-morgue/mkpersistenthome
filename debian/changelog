@@ -1,8 +1,9 @@
-mkpersistenthome-kanotix (0.5.13) UNRELEASED; urgency=low
+mkpersistenthome-kanotix (0.5.13) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * switch to utf-8.
+  * fix lintian errors.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 18 Sep 2006 02:48:36 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu,  2 Nov 2006 13:44:51 +0100
 
 mkpersistenthome-kanotix (0.5.12) unstable; urgency=low
 

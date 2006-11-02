@@ -49,22 +49,22 @@ HOMEKB="$(du -sk $HOME 2>/dev/null | awk '{print $1}')"
 case "$LANGUAGE" in
 de*|at*|ch*)
 TITLE1="Permanentes KANOTIX Heimverzeichnis anlegen"
-MESSAGE1="Dieses Skript richtet ein permanentes Heimverzeichnis für den User \"$FLL_LIVE_USER\" auf Ihrer Festplatte oder einem Wechselmedium wie Memorystick, Compactflash oder ZIP-Medium ein. Hierdurch ist es möglich, Daten und persönliche Konfigurationen über einen Reboot hinaus zu speichern, sofern sie im persönlichen Heimverzeichnis des Benutzers abgelegt werden. Per Bootoption, z.B. \"home=/dev/sda1\" für die erste Partition einer SCSI-Festplatte oder eines USB-Memorystick, können Sie beim Systemstart das permanente Heimverzeichnis wieder aktivieren. Die Bootoption \"home=scan\" durchsucht automatisch alle Partitionen und erkannten Speichermedien nach einem persistenten KANOTIX-Heimverzeichnis.
+MESSAGE1="Dieses Skript richtet ein permanentes Heimverzeichnis fÃ¼r den User \"$FLL_LIVE_USER\" auf Ihrer Festplatte oder einem Wechselmedium wie Memorystick, Compactflash oder ZIP-Medium ein. Hierdurch ist es mÃ¶glich, Daten und persÃ¶nliche Konfigurationen Ã¼ber einen Reboot hinaus zu speichern, sofern sie im persÃ¶nlichen Heimverzeichnis des Benutzers abgelegt werden. Per Bootoption, z.B. \"home=/dev/sda1\" fÃ¼r die erste Partition einer SCSI-Festplatte oder eines USB-Memorystick, kÃ¶nnen Sie beim Systemstart das permanente Heimverzeichnis wieder aktivieren. Die Bootoption \"home=scan\" durchsucht automatisch alle Partitionen und erkannten Speichermedien nach einem persistenten KANOTIX-Heimverzeichnis.
 
-Möchten Sie das Heimverzeichnis des Benutzers \"$FLL_LIVE_USER\" permanent speichern?"
-MESSAGE2="Bitte wählen Sie die Partition, auf der Sie das Heimverzeichnis (oder ein Image davon) anlegen möchten."
-MESSAGE3="Möchten Sie die KOMPLETTE Partition verwenden und mit den Linux-Dateisystem formatieren?
+MÃ¶chten Sie das Heimverzeichnis des Benutzers \"$FLL_LIVE_USER\" permanent speichern?"
+MESSAGE2="Bitte wÃ¤hlen Sie die Partition, auf der Sie das Heimverzeichnis (oder ein Image davon) anlegen mÃ¶chten."
+MESSAGE3="MÃ¶chten Sie die KOMPLETTE Partition verwenden und mit dem Linux-Dateisystem formatieren?
 NEIN=Image-Datei auf bestehendem Dateisystem anlegen."
-E1="Persönliche Einstellungen (Desktop, Programme)"
+E1="PersÃ¶nliche Einstellungen (Desktop, Programme)"
 E2="Netzwerk Einstellungen (LAN, Modem, ISDN, ASDL)"
 E3="Grafik Subsystem Einstellungen (XF86Config)"
 E4="Weitere systemweite Einstellungen (Drucker etc.)"
 E5="Alle Desktop-Dateien (${DESKTOPKB}kB)"
 SUCCESS="FERTIG!
 
-Die KANOTIX-Konfiguration wurde erfolgreich gespeichert. Ihre Konfigurationsdateien werden beim nächsten KANOTIX-Bootvorgang in die Ramdisk restauriert, wenn Sie im Bootscreen \"$FLL_LIVE_USER floppyconfig\" (Diskette) bzw. \"$FLL_LIVE_USER myconfig=/media/verzeichnisname\" angeben."
+Die KANOTIX-Konfiguration wurde erfolgreich gespeichert. Ihre Konfigurationsdateien werden beim nÃ¤chsten KANOTIX-Bootvorgang in die Ramdisk restauriert, wenn Sie im Bootscreen \"$FLL_LIVE_USER floppyconfig\" (Diskette) bzw. \"$FLL_LIVE_USER myconfig=/media/verzeichnisname\" angeben."
 ERROR="Leider konnte die KANOTIX-Konfiguration NICHT gespeichert werden:"
-MESSAGE_NO_PARTS="Keine passende Partition gefunden. Zur Erinnerung: NTFS-Partitonen können mit Linux nicht beschrieben werden."
+MESSAGE_NO_PARTS="Keine passende Partition gefunden. Zur Erinnerung: NTFS-Partitonen kÃ¶nnen mit Linux nicht beschrieben werden."
 ;;
 *)
 TITLE1="Create persistent KANOTIX home directory"
@@ -122,14 +122,14 @@ fi
 # More language-dependent Messages
 case "$LANGUAGE" in
 de*|at*|ch*)
-MESSAGE4="Sind Sie ABSOLUT SICHER, dass Sie die Partition $PARTITION formatieren möchten? ALLE DATEN WERDEN DADURCH GELÖSCHT!"
-MESSAGE5="Möchten Sie Ihr Heimverzeichnis mit AES256 (=Advanced Encryption Standard 256bit, s.a. http://csrc.nist.gov/encryption/aes/) verschlüsselt speichern? Hierzu ist die Eingabe eines sehr langen Passwortes beim Einrichten sowie beim Einbinden des Verzeichnisses beim Systemstart erforderlich. NEIN=unverschlüsselt"
-MESSAGE6="Bitte geben Sie die gewünschte Größe Ihres persistenten Heimverzeichnisses in MB an (aktuell belegt: $HOMEKB Kilobyte, verfügbar:"
+MESSAGE4="Sind Sie ABSOLUT SICHER, dass Sie die Partition $PARTITION formatieren mÃ¶chten? ALLE DATEN WERDEN DADURCH GELÃ–SCHT!"
+MESSAGE5="MÃ¶chten Sie Ihr Heimverzeichnis mit AES256 (=Advanced Encryption Standard 256bit, s.a. http://csrc.nist.gov/encryption/aes/) verschlÃ¼sselt speichern? Hierzu ist die Eingabe eines sehr langen Passwortes beim Einrichten sowie beim Einbinden des Verzeichnisses beim Systemstart erforderlich. NEIN=unverschlÃ¼sselt"
+MESSAGE6="Bitte geben Sie die gewÃ¼nschte GrÃ¶ÃŸe Ihres persistenten Heimverzeichnisses in MB an (aktuell belegt: $HOMEKB Kilobyte, verfÃ¼gbar:"
 MESSAGE7="Formatiere $DEVICE mit dem ext2 Dateisystem und kopiere Daten..."
-MESSAGE8="Lege Datenbereich für Linux an..."
+MESSAGE8="Lege Datenbereich fÃ¼r Linux an..."
 SUCCESS="$DEVICE wurde erfolgreich mit dem Linux ext2 Dateisystem formatiert, und Ihre Heimverzeichnis-Daten wurden darauf transferiert.
 
-Sie können jetzt Ihren Computer neu starten, und beim KANOTIX boot:-Prompt durch Eingabe von \"$FLL_LIVE_USER home=$PARTITION\" oder \"$FLL_LIVE_USER home=scan\" Ihr permanentes Heimverzeichnis aktivieren. Falls Sie außerdem (mit dem saveconfig Skript) die Systemeinstellungen gesichert haben, können Sie diese Option mit der Angabe von \"myconf=$PARTITION\" oder \"myconf=scan\" kombinieren."
+Sie kÃ¶nnen jetzt Ihren Computer neu starten, und beim KANOTIX boot:-Prompt durch Eingabe von \"$FLL_LIVE_USER home=$PARTITION\" oder \"$FLL_LIVE_USER home=scan\" Ihr permanentes Heimverzeichnis aktivieren. Falls Sie auÃŸerdem (mit dem saveconfig Skript) die Systemeinstellungen gesichert haben, kÃ¶nnen Sie diese Option mit der Angabe von \"myconf=$PARTITION\" oder \"myconf=scan\" kombinieren."
 ;;
 *)
 MESSAGE4="Are you positively SURE that you want to format partition $PARTITION? ALL DATA WILL BE LOST!"
@@ -183,7 +183,7 @@ return 1
 getpassword(){
 case "$LANGUAGE" in
 de*|at*|ch*)
-HEADER="AES256 Verschlüsselungs-Passwort (Minimum 20 Zeichen!)"
+HEADER="AES256 VerschlÃ¼sselungs-Passwort (Minimum 20 Zeichen!)"
 ENTER="Eingabe:"
 AGAIN="Noch einmal, um sicherzugehen:"
 ;;
