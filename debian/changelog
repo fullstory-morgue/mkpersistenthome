@@ -1,8 +1,11 @@
-mkpersistenthome-kanotix (0.5.14) UNRELEASED; urgency=low
+mkpersistenthome-kanotix (0.5.14) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * re- indent.
+  * standardize on X_CONF.
+  * switch to secure temp file handling.
+  * centralize the /etc/syconfig mess.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu,  2 Nov 2006 13:46:06 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri,  3 Nov 2006 21:00:14 +0100
 
 mkpersistenthome-kanotix (0.5.13) unstable; urgency=low
 
