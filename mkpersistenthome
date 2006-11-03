@@ -60,7 +60,7 @@ Möchten Sie das Heimverzeichnis des Benutzers \"$FLL_LIVE_USER\" permanent spei
 		NEIN=Image-Datei auf bestehendem Dateisystem anlegen."
 		E1="Persönliche Einstellungen (Desktop, Programme)"
 		E2="Netzwerk Einstellungen (LAN, Modem, ISDN, ASDL)"
-		E3="Grafik Subsystem Einstellungen (XF86Config)"
+		E3="Grafik Subsystem Einstellungen (xorg.conf)"
 		E4="Weitere systemweite Einstellungen (Drucker etc.)"
 		E5="Alle Desktop-Dateien (${DESKTOPKB}kB)"
 		SUCCESS="FERTIG!
@@ -79,7 +79,7 @@ Do you want to create a persistent home directory for the \"$FLL_LIVE_USER\" use
 		NO=Just create an image in the existing filesystem."
 		E1="Personal configuration (desktop, programs)"
 		E2="Network settings (LAN, Modem, ISDN, ADSL)"
-		E3="Graphics subsystem settings (XF86Config)"
+		E3="Graphics subsystem settings (xorg.conf)"
 		E4="Other system configuration (printer etc.)"
 		E5="All files on the Desktop (${DESKTOPKB}kB)"
 		SUCCESS="SUCCESS!
