@@ -1,5 +1,5 @@
 [Desktop Entry]
-Exec=gksu -- /usr/sbin/mkpersistenthome
+Exec=kanotix-su /usr/sbin/mkpersistenthome
 Name[de]=Permanentes KANOTIX-Heimverzeichnis einrichten
 Name=Create a persistent KANOTIX home directory
 Icon=mkpersistenthome

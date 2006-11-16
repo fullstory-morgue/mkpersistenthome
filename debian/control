@@ -8,6 +8,6 @@ Standards-Version: 3.7.2
 Package: mkpersistenthome-kanotix
 Architecture: all
 Depends: dialog, initscripts-kanotix-live
-Recommends: xdialog
+Recommends: xdialog, xterm | x-terminal-emulator
 Description: Shell GUI for generation of a KANOTIX persistent homedir
  small tool to create a persistent home.
