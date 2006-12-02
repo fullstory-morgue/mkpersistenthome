@@ -1,13 +1,14 @@
-Source: mkpersistenthome-kanotix
+Source: mkpersistenthome
 Section: admin
 Priority: optional
 Maintainer: Stefan Lippers-Hollmann <s.l-h@gmx.de>
 Build-Depends: cdbs (>= 0.4.23-1.1), debhelper (>= 5.0.0)
 Standards-Version: 3.7.2
 
-Package: mkpersistenthome-kanotix
+Package: mkpersistenthome
 Architecture: all
-Depends: dialog, initscripts-kanotix-live
+Depends: dialog, initscripts-sidux-live
+Conflicts: mkpersistenthome-kanotix
 Recommends: xdialog, xterm | x-terminal-emulator
-Description: Shell GUI for generation of a KANOTIX persistent homedir
+Description: Shell GUI for generation of a Sidux persistent homedir
  small tool to create a persistent home.

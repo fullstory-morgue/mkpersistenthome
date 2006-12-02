@@ -1,6 +1,6 @@
 [Desktop Entry]
-Exec=kanotix-su /usr/sbin/mkpersistenthome
-Name[de]=Permanentes KANOTIX-Heimverzeichnis einrichten
-Name=Create a persistent KANOTIX home directory
+Exec=su-me /usr/sbin/mkpersistenthome
+Name[de]=Permanentes Sidux-Heimverzeichnis einrichten
+Name=Create a persistent Sidux home directory
 Icon=mkpersistenthome
 Type=Application
