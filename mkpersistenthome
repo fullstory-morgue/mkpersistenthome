@@ -1,10 +1,10 @@
 #!/bin/bash
-# mkpersistenthome - create Sidux home directory image
+# mkpersistenthome - create sidux home directory image
 # (C) Klaus Knopper Feb 2003
 # (C) 2004-2006 Stefan Lippers-Hollmann <s.l-h@gmx.de>
 
 # override tool behaviour through distro-defaults
-FLL_DISTRO_NAME="Sidux"
+FLL_DISTRO_NAME="sidux"
 FLL_IMAGE_DIR="KNOPPIX"
 FLL_MOUNTPOINT="/KNOPPIX"
 [ -r /etc/default/distro ] && source /etc/default/distro

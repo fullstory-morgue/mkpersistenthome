@@ -1,6 +1,6 @@
 [Desktop Entry]
 Exec=su-me /usr/sbin/mkpersistenthome
-Name[de]=Permanentes Sidux-Heimverzeichnis einrichten
-Name=Create a persistent Sidux home directory
+Name[de]=Permanentes sidux-Heimverzeichnis einrichten
+Name=Create a persistent sidux home directory
 Icon=mkpersistenthome
 Type=Application

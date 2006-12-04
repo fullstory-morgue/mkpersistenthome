@@ -10,5 +10,5 @@ Architecture: all
 Depends: dialog, initscripts-sidux-live
 Conflicts: mkpersistenthome-kanotix
 Recommends: xdialog, xterm | x-terminal-emulator
-Description: Shell GUI for generation of a Sidux persistent homedir
+Description: Shell GUI for generation of a sidux persistent homedir
  small tool to create a persistent home.

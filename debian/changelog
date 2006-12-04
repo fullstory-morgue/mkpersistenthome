@@ -2,7 +2,9 @@ mkpersistenthome (0.5.17) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Sun,  3 Dec 2006 02:50:59 +0100
+  * fixed mispelling
+
+ -- Joaquim Boura <x-un-i@sidux.com>  Mon,  4 Dec 2006 14:33:54 +0100
 
 mkpersistenthome (0.5.16) unstable; urgency=low
 
