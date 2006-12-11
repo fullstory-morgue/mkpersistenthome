@@ -1,8 +1,8 @@
 mkpersistenthome (0.5.18) UNRELEASED; urgency=low
 
   * NOT RELEASED YET
-
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue,  5 Dec 2006 13:28:30 +0100
+  * fixed misplace su-me
+ -- Joaquim Boura <x-un-i@sidux.com>  Tue, 12 Dec 2006 00:53:38 +0100
 
 mkpersistenthome (0.5.17) unstable; urgency=low
 
