@@ -1,3 +1,9 @@
+mkpersistenthome (0.5.19) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 12 Dec 2006 01:53:54 +0100
+
 mkpersistenthome (0.5.18) unstable; urgency=low
 
   * fixed misplace su-me
