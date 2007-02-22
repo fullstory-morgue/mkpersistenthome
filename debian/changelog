@@ -1,6 +1,7 @@
-mkpersistenthome (0.5.20) UNRELEASED; urgency=low
+mkpersistenthome (0.5.20) ORPHANED; urgency=low
 
   * NOT RELEASED YET
+  * ORPHAN PACKAGE
 
  -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue,  2 Jan 2007 16:28:09 +0100
 
